@@ -1,0 +1,140 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:import/typescript"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    "react/button-has-type": "off",
+
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+
+    /* Enable jsx to tsx*/
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [ ".tsx" ] }
+    ],
+    
+    /* Disable the need to add the file extension*/
+    "import/extensions": [
+      "error",
+      { "ts": "never", "tsx": "never", "js": "never", "jsx": "never" }
+    ],
+
+    /* Disable need to add 'export default' */
+    "import/prefer-default-export": "off",
+
+
+    /* Defines max row length */
+    "max-len": [
+      "warn",
+      { "code": 120 }
+    ],
+
+    "react/jsx-props-no-spreading": "off",
+
+    /* Enable console */
+    "no-console":"off",
+    
+    /* Import object line */
+    "object-curly-newline": "off",
+
+    /* Disable need to add type for props */
+    "react/prop-types": "off",
+
+    /* Enable any type */
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+
+    /* Enable xxx?.xxx */
+    "no-unused-expressions": "off",
+
+    /* Enable and add import order helpers */
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          [
+            "/^react/",
+            "/^styled/"
+          ],
+          "module",
+          "/^~/components/",
+          "/^~/pages/",
+          "/^~/theme/",
+          "/^~/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
+
+    /* Disable need to add space between functions/methods and parentheses */
+    "keyword-spacing": [
+      "warn",
+      {
+        "overrides": {
+          "if": {
+            "after": false
+          },
+          "for": {
+            "after": false
+          },
+          "while": {
+            "after": false
+          },
+          "catch": {
+            "after": false
+          },
+          "switch": {
+            "after": false
+          }
+        }
+      }
+    ]
+  },
+
+  /* Configure path alias */
+  "settings": {
+    "import/resolver": {
+      "typescript": { "directory": "." },
+      "node": {
+        "extensions": [ ".ts", ".tsx", ".js", ".jsx" ]
+      },
+      "babel-plugin-root-import": {
+        "paths": [{ "rootPathSuffix": "src" }]
+      }
+    }
+  }
+}
