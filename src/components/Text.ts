@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import crypto from 'crypto';
-
 interface ITextProps {
   size?: number;
   center?: 'xs' | 'sm' | 'md' | true;
@@ -18,14 +16,10 @@ const Text = styled.p<ITextProps>`
   ${({ bold }) => bold && css`font-weight: 800;`}
   ${({ fontFamily }) => fontFamily && css`font-family: "${fontFamily}", "Roboto", sans-serif;`}
 
-  ${({ entryAnimation }) => {
-    const animUnique = crypto.createHash('md5').digest('hex');
-    console.log(animUnique);
+  ${({ entryAnimation }) => entryAnimation && css`
+      animation: textEntry .6s ;
 
-    return entryAnimation && css`
-      animation: entry${animUnique} .6s ;
-
-      @keyframes entry${animUnique} {
+      @keyframes textEntry {
         0% {
           transform: scale(.99);
           opacity: 0;
@@ -38,8 +32,7 @@ const Text = styled.p<ITextProps>`
           opacity: 1;
         }
       }
-    `;
-  }}
+    `}
 
   ${({ center, theme }) => {
     switch(center) {

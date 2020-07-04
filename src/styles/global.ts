@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { shade } from 'polished';
-
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -14,13 +12,10 @@ export default createGlobalStyle`
     height: 100%;
   }
 
-  body {
+  body, #root {
     font: 14px "Roboto", sans-serif;
-    background:
-      linear-gradient(
-        ${({ theme }) => theme.colors.background},
-        ${({ theme }) => shade(0.02, theme.colors.background)}
-      );
+    background: ${({ theme }) => theme.colors.background};
+    
     color: ${({ theme }) => theme.colors.text};
     -webkit-font-smoothing: antialiased !important;
   }

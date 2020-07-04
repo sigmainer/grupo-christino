@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <Text>
               Desenvolvido por
               &nbsp;
-              <a href="https://furlansoftware.com" target="_balnk">Furlan Software</a>
+              <a href="https://furlansolutions.com.br" target="_balnk">Furlan Solutions</a>
             </Text>
           </Col>
 
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               <Text>
                 Desenvolvido por
                 &nbsp;
-                <a href="https://furlansoftware.com" target="_balnk">Furlan Software</a>
+                <a href="https://furlansolutions.com.br" target="_balnk">Furlan Solutions</a>
               </Text>
             </Col>
           </Row>

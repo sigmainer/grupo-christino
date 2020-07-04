@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface IButtonProps {
@@ -5,7 +6,7 @@ interface IButtonProps {
   selected?: boolean;
 }
 
-export default styled.a<IButtonProps>`
+export default styled(Link)<IButtonProps>`
   padding: 10px;
   cursor: pointer;
 

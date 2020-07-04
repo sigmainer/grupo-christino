@@ -15,7 +15,7 @@ export const Container = styled(Grid)`
     align-items: center;
     img {
       width: 100%;
-      max-width: 600px;
+      max-width: 400px;
 
       animation: entry .6s ;
 

@@ -1,8 +1,10 @@
 import React from 'react';
+import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { Row, Col } from 'react-styled-flexboxgrid';
 
 import Link from '~/components/Link';
+import RouterLink from '~/components/RouterLink';
 
 import { Container, Navigation, ImageContainer } from './styles';
 
@@ -21,17 +23,30 @@ const Header: React.FC = () => {
 
         <Col xs={false} md={6}>
           <Navigation>
-            <Link to="/" selected={location.pathname === '/'}>
+            <RouterLink to="/" selected={location.pathname === '/'}>
               INÍCIO
-            </Link>
-            <Link to="/contabilidade" selected={location.pathname === '/contabilidade'}>
+            </RouterLink>
+            <RouterLink to="/contabilidade" selected={location.pathname === '/contabilidade'}>
               CONTABILIDADE
-            </Link>
-            <Link to="/despachante" selected={location.pathname === '/despachante'}>
+            </RouterLink>
+            <RouterLink to="/despachante" selected={location.pathname === '/despachante'}>
               DESPACHANTE
-            </Link>
-            <Link to="/seguros" selected={location.pathname === '/seguros'}>
+            </RouterLink>
+            <RouterLink to="/seguros" selected={location.pathname === '/seguros'}>
               SEGUROS
+            </RouterLink>
+            <RouterLink to="/seguros" selected={location.pathname === '/seguros'}>
+              SEGUROS
+            </RouterLink>
+
+            <Link href="https://www.instagram.com/christino_consultoria/" target="_blank">
+              <FaInstagram size={20} />
+            </Link>
+            <Link href="https://www.facebook.com/christinoconsultoria/" target="_blank">
+              <FaFacebook size={20} />
+            </Link>
+            <Link href="https://wa.me/5514997068240" target="_blank">
+              <FaWhatsapp size={20} />
             </Link>
           </Navigation>
         </Col>
