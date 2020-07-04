@@ -1,15 +1,11 @@
 import { Grid, Col } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 
-import Text from '~/components/Text';
+import { Card } from '~/components/Card';
 
 export const Container = styled(Grid)`
   margin-top: 20px;
   min-height: calc(100% - 140px);
-
-  ${Text}.title {
-    margin-bottom: 20px;
-  }
 
   #slogan {
     margin: 50px 0;
@@ -20,16 +16,13 @@ export const Container = styled(Grid)`
     flex-direction: column;
     justify-content: center;
   }
-`;
 
-/*
-@media (max-width: ${theme.flexboxgrid.breakpoints.sm}em) {
-  margin: 0 -${theme.flexboxgrid.outerMargin}rem;
-  padding: 5px ${theme.flexboxgrid.outerMargin}rem;
-  color: ${theme.colors.primaryText};
-  background: ${theme.colors.primary};
-}
-*/
+  .servicos {
+    ${Card} {
+      margin: 30px;
+    }
+  }
+`;
 
 export const TextContainer = styled.div`
   height: 100%;

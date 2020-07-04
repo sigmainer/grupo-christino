@@ -17,27 +17,31 @@ const Header: React.FC = () => {
         <Col xs={12} md={6}>
           <ImageContainer>
             <img src="logo.svg" alt="grupo-logo" />
-            <h1>GRUPO CHRISTINO</h1>
+            <h1>CHRISTINO CONSULTORIA</h1>
           </ImageContainer>
         </Col>
 
         <Col xs={false} md={6}>
           <Navigation>
-            <RouterLink to="/" selected={location.pathname === '/'}>
-              INÍCIO
-            </RouterLink>
-            <RouterLink to="/contabilidade" selected={location.pathname === '/contabilidade'}>
-              CONTABILIDADE
-            </RouterLink>
-            <RouterLink to="/despachante" selected={location.pathname === '/despachante'}>
-              DESPACHANTE
-            </RouterLink>
-            <RouterLink to="/seguros" selected={location.pathname === '/seguros'}>
-              SEGUROS
-            </RouterLink>
-            <RouterLink to="/seguros" selected={location.pathname === '/seguros'}>
-              SEGUROS
-            </RouterLink>
+            {false && (
+              <>
+                <RouterLink to="/" selected={location.pathname === '/'}>
+                  INÍCIO
+                </RouterLink>
+                <RouterLink to="/contabilidade" selected={location.pathname === '/contabilidade'}>
+                  CONTABILIDADE
+                </RouterLink>
+                <RouterLink to="/despachante" selected={location.pathname === '/despachante'}>
+                  DESPACHANTE
+                </RouterLink>
+                <RouterLink to="/seguros" selected={location.pathname === '/seguros'}>
+                  SEGUROS
+                </RouterLink>
+                <RouterLink to="/seguros" selected={location.pathname === '/seguros'}>
+                  SEGUROS
+                </RouterLink>
+              </>
+            )}
 
             <Link href="https://www.instagram.com/christino_consultoria/" target="_blank">
               <FaInstagram size={20} />

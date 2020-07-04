@@ -6,6 +6,7 @@ interface ITextProps {
   fontFamily?: string;
   bold?: boolean;
   entryAnimation?:boolean;
+  title?: boolean
 }
 
 const Text = styled.p<ITextProps>`
@@ -13,6 +14,7 @@ const Text = styled.p<ITextProps>`
   margin: 5px 0;
 
   ${({ size }) => size && css`font-size: ${size}px;`}
+  ${({ title }) => title && css`margin: 20px 0;`}
   ${({ bold }) => bold && css`font-weight: 800;`}
   ${({ fontFamily }) => fontFamily && css`font-family: "${fontFamily}", "Roboto", sans-serif;`}
 
