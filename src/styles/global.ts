@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { shade } from 'polished';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -24,5 +26,11 @@ export default createGlobalStyle`
     text-decoration: none;
     font-weight: 800;
     color: ${({ theme }) => theme.colors.text};
+    transition: color .2s;
+
+    :hover,
+    :focus {
+      color: ${({ theme }) => shade(0.5, theme.colors.primary)};
+    } 
   }
 `;

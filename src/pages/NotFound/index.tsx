@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Aboult: React.FC = () => (
+const NotFound: React.FC = () => (
   <Container>
     <div>
       <img src="assets/404.svg" alt="page-not-found" />
@@ -10,4 +10,4 @@ const Aboult: React.FC = () => (
   </Container>
 );
 
-export default Aboult;
+export default NotFound;

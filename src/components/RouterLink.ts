@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-interface IButtonProps {
+interface ILinkProps {
   color?: 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'danger';
   selected?: boolean;
 }
 
-export default styled(Link)<IButtonProps>`
+export default styled(Link)<ILinkProps>`
   padding: 10px;
   cursor: pointer;
 

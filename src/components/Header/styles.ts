@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Grid, Row } from 'react-styled-flexboxgrid';
 import styled, { css } from 'styled-components';
 
@@ -11,7 +12,7 @@ export const Container = styled(Grid)`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(Link)`
   height: 100%;
 
   display: flex;
@@ -20,6 +21,11 @@ export const ImageContainer = styled.div`
   img {
     height: 40px;
     margin-right: 5px;
+  }
+
+  :hover,
+  :focus {
+    color: ${({ theme }) => theme.colors.text};
   }
 
   ${({ theme }) => (css`

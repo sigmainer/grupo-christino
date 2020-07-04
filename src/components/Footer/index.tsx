@@ -1,8 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-styled-flexboxgrid';
-import { useTheme } from 'styled-components';
-
-import { pixels } from '@pacote/pixels';
 
 import useWindowSize from '~/utils/useWindowSize';
 
@@ -10,11 +7,10 @@ import { Container, Text } from './styles';
 
 const Footer: React.FC = () => {
   const windowSize = useWindowSize();
-  const theme = useTheme();
 
   return (
     <Container>
-      {windowSize.width > pixels(`${theme.flexboxgrid.breakpoints.sm}em`) && (
+      {windowSize.hideOn('xs') && (
         <Row>
           <Col xs={4}>
             <Text>
@@ -40,7 +36,7 @@ const Footer: React.FC = () => {
         </Row>
       )}
 
-      {windowSize.width <= pixels(`${theme.flexboxgrid.breakpoints.sm}em`) && (
+      {windowSize.showOn('xs') && (
         <>
           <Row>
             <Col xs={12}>

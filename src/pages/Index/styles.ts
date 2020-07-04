@@ -1,7 +1,7 @@
 import { Grid, Col } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 
-import { Card } from '~/components/Card';
+import { Card, CardBody } from '~/components/Card';
 
 export const Container = styled(Grid)`
   margin-top: 20px;
@@ -20,6 +20,33 @@ export const Container = styled(Grid)`
   .servicos {
     ${Card} {
       margin: 30px;
+      transition: transform .2s;
+      pointer-events: none;
+      animation: CardEntry .6s;
+
+      cursor: pointer;
+
+      ${CardBody} {
+        pointer-events: auto;
+      }
+
+      :hover {
+        transform: scale(1.05);
+      }
+
+      @keyframes CardEntry {
+        0% {
+          transform: scale(.95);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.01);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
     }
   }
 `;

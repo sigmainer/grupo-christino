@@ -5,18 +5,19 @@ interface ITextProps {
   center?: 'xs' | 'sm' | 'md' | true;
   fontFamily?: string;
   bold?: boolean;
+  asTitle?: boolean;
   entryAnimation?:boolean;
-  title?: boolean
 }
 
 const Text = styled.p<ITextProps>`
   width: 100%;
   margin: 5px 0;
 
-  ${({ size }) => size && css`font-size: ${size}px;`}
-  ${({ title }) => title && css`margin: 20px 0;`}
-  ${({ bold }) => bold && css`font-weight: 800;`}
   ${({ fontFamily }) => fontFamily && css`font-family: "${fontFamily}", "Roboto", sans-serif;`}
+  ${({ size }) => size && css`font-size: ${size}px;`}
+
+  ${({ asTitle }) => asTitle && css`margin: 20px 0;`}
+  ${({ bold, asTitle }) => (bold || asTitle) && css`font-weight: 800;`}
 
   ${({ entryAnimation }) => entryAnimation && css`
       animation: textEntry .6s ;

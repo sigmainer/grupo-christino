@@ -39,7 +39,7 @@ export const CardBody = styled.div<ICardBodyProps>`
 
 export const Card = styled.div<ICardProps>`
   box-shadow: 0 2px 8px 1px ${({ theme }) => theme.colors.shaddow};
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   ${({ height }) => (
     height && css`
