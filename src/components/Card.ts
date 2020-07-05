@@ -47,8 +47,8 @@ export const Card = styled.div<ICardProps>`
     `
   )}
 
-  > ${CardHeader},
-  > ${CardBody} {
+  ${CardHeader},
+  ${CardBody} {
     padding: 10px;
   }
 `;

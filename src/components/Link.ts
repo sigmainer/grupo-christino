@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-interface IButtonProps {
+interface ILinkProps {
   color?: 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'danger';
   selected?: boolean;
 }
 
-export default styled.a<IButtonProps>`
+export default styled.a<ILinkProps>`
   padding: 10px;
   cursor: pointer;
 

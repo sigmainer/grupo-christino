@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col } from 'react-styled-flexboxgrid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 
 import { Card, CardBody } from '~/components/Card';
 import { Modal, ModalHeader, ModalBody } from '~/components/Modal';
@@ -7,7 +7,7 @@ import Text from '~/components/Text';
 
 import useWindowSize from '~/utils/useWindowSize';
 
-import { Container, TextContainer, ImgContainer } from './styles';
+import { Presentation, ServicosContainer, TextContainer, ImgContainer } from './styles';
 
 const Index: React.FC = () => {
   const [modalContabilidade, setModalContabilidade] = useState(false);
@@ -18,7 +18,7 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <Container>
+      <Presentation>
         <Row>
           <Col xs={12} sm={12} md={8}>
             <TextContainer>
@@ -26,7 +26,7 @@ const Index: React.FC = () => {
                 QUEM SOMOS
               </Text>
 
-              <Text size={20} entryAnimation center="xs" id="sobre">
+              <Text size={20} entryAnimation center>
                 Somos o Grupo Christino, empresa especializada em Serviços Contábeis, de Despachante e de Seguros.
                 Com atuação a mais de 20 anos no mercado, angariamos o reconhecimento do mercado em trazer soluções a
                 nossos clientes.
@@ -46,42 +46,48 @@ const Index: React.FC = () => {
           </Col>
           )}
         </Row>
+      </Presentation>
 
-        <Row className="servicos">
-          <Col xs={12} sm={4} onClick={() => setModalContabilidade(true)}>
-            <Card>
-              <CardBody>
-                <ImgContainer>
-                  <img src="assets/contabilidade.svg" alt="" />
-                </ImgContainer>
-                <Text size={18} center bold>CONTABILIDADE</Text>
-              </CardBody>
-            </Card>
-          </Col>
+      <ServicosContainer>
+        <Grid>
+          <Row className="servicos">
+            <Col xs={12} sm={4} onClick={() => setModalContabilidade(true)}>
+              <Card>
+                <CardBody>
+                  <ImgContainer>
+                    <img src="assets/contabilidade.svg" alt="" />
+                  </ImgContainer>
+                  <Text size={18} center bold>CONTABILIDADE</Text>
+                </CardBody>
+              </Card>
+            </Col>
 
-          <Col xs={12} sm={4} onClick={() => setModalDespachante(true)}>
-            <Card>
-              <CardBody>
-                <ImgContainer>
-                  <img src="assets/despachante2.svg" alt="" />
-                </ImgContainer>
-                <Text size={18} center bold>DESPACHANTE</Text>
-              </CardBody>
-            </Card>
-          </Col>
+            <Col xs={12} sm={4} onClick={() => setModalDespachante(true)}>
+              <Card>
+                <CardBody>
+                  <ImgContainer>
+                    <img src="assets/despachante2.svg" alt="" />
+                  </ImgContainer>
+                  <Text size={18} center bold>DESPACHANTE</Text>
+                </CardBody>
+              </Card>
+            </Col>
 
-          <Col xs={12} sm={4} onClick={() => setModalSeguros(true)}>
-            <Card>
-              <CardBody>
-                <ImgContainer>
-                  <img src="assets/seguro1.svg" alt="" />
-                </ImgContainer>
-                <Text size={18} center bold>SEGUROS</Text>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+            <Col xs={12} sm={4} onClick={() => setModalSeguros(true)}>
+              <Card>
+                <CardBody>
+                  <ImgContainer>
+                    <img src="assets/seguro1.svg" alt="" />
+                  </ImgContainer>
+                  <Text size={18} center bold>SEGUROS</Text>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </Grid>
+      </ServicosContainer>
 
+      <Grid>
         <Row>
           {windowSize.hideOn('sm') && (
           <Col xs={false} sm={4}>
@@ -97,16 +103,16 @@ const Index: React.FC = () => {
                 NÓS NOS IMPORTAMOS
               </Text>
 
-              <Text size={18} entryAnimation center="xs">
-                Temos o propósito de trazer facilidades aos nossos clientes, sempre levando muita informação e facilitando
-                o dia a dia do empresário, através de um excelente planejamento claro e estratégico, deixando-os
-                disponíveis para focar no dia a dia de seu empreendimento.
+              <Text size={18} entryAnimation center>
+                Temos o propósito de trazer facilidades aos nossos clientes, sempre levando muita informação e
+                facilitando o dia a dia do empresário, através de um excelente planejamento claro e estratégico,
+                deixando-os disponíveis para focar no dia a dia de seu empreendimento.
               </Text>
-              <Text size={18} entryAnimation center="xs">
-                Apresentamos soluções contábeis para cada tipo de cliente, sempre observando as peculiaridades individuais
-                de cada segmento, bem como serviços de Despachante e de Seguros, que atendam a todas as necessidades de
-                nossos clientes, para que assim possam ter tempo mais livre para se dedicar as suas atividades
-                empresariais.
+              <Text size={18} entryAnimation center>
+                Apresentamos soluções contábeis para cada tipo de cliente, sempre observando as peculiaridades
+                individuais de cada segmento, bem como serviços de Despachante e de Seguros, que atendam a todas as
+                necessidades de nossos clientes, para que assim possam ter tempo mais livre para se dedicar as suas
+                atividades empresariais.
               </Text>
             </TextContainer>
           </Col>
@@ -119,11 +125,11 @@ const Index: React.FC = () => {
                 NOSSO OBJETIVO
               </Text>
 
-              <Text size={18} entryAnimation center="xs">
+              <Text size={18} entryAnimation center>
                 Trazer soluções ao empresário com ética, transparência e responsabilidade, para que o mesmo possa se
                 dedicar com tranquilidade as suas atividades operacionais, auxiliando em seu crescimento.
               </Text>
-              <Text size={18} entryAnimation center="xs">
+              <Text size={18} entryAnimation center>
                 Prestar serviços de excelência, com cumprimentos de todos os prazos, atendendo os requisitos legais,
                 proporcionando serviços cm qualidade e melhorias contínuas, buscando atingir a plena satisfação do
                 cliente.
@@ -139,7 +145,7 @@ const Index: React.FC = () => {
           </Col>
           )}
         </Row>
-      </Container>
+      </Grid>
 
       <Modal open={modalContabilidade} onClose={() => setModalContabilidade(false)}>
         <ModalHeader>

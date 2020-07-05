@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaInstagram, FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import { Row, Col } from 'react-styled-flexboxgrid';
 
+import Button from '~/components/Button';
 import Link from '~/components/Link';
-import RouterLink from '~/components/RouterLink';
+import { Modal, ModalHeader, ModalBody } from '~/components/Modal';
 
 import useWindowSize from '~/utils/useWindowSize';
 
@@ -11,17 +12,20 @@ import { Container, Navigation, ImageContainer } from './styles';
 
 const Header: React.FC = () => {
   const windowSize = useWindowSize();
-  return (
-    <Container>
-      <Row>
-        <Col xs={12} sm={6} md={4}>
-          <ImageContainer to="/">
-            <img src="logo.svg" alt="grupo-logo" />
-            <h1>GRUPO CHRISTINO</h1>
-          </ImageContainer>
-        </Col>
+  const [modalContato, setModalContato] = useState(false);
 
-        {windowSize.hideOn('xs') && (
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col xs={12} sm={6} md={4}>
+            <ImageContainer to="/">
+              <img src="logo.svg" alt="grupo-logo" />
+              <h1>GRUPO CHRISTINO</h1>
+            </ImageContainer>
+          </Col>
+
+          {windowSize.hideOn('xs') && (
           <Col xs={false} sm={6} md={8}>
             <Navigation>
               <Link href="https://www.instagram.com/christino_consultoria/" target="_blank">
@@ -34,14 +38,24 @@ const Header: React.FC = () => {
                 <FaWhatsapp size={20} />
               </Link>
 
-              <RouterLink to="/contato">
+              <Button onClick={() => setModalContato(true)}>
                 <FaEnvelope size={20} />
-              </RouterLink>
+              </Button>
             </Navigation>
           </Col>
-        )}
-      </Row>
-    </Container>
+          )}
+        </Row>
+      </Container>
+
+      <Modal open={modalContato} onClose={() => setModalContato(false)}>
+        <ModalHeader>
+          CONTABILIDADE
+        </ModalHeader>
+        <ModalBody>
+          aa
+        </ModalBody>
+      </Modal>
+    </>
   );
 };
 export default Header;

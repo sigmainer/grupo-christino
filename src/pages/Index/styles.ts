@@ -1,23 +1,12 @@
-import { Grid, Col } from 'react-styled-flexboxgrid';
+import { Grid, Row } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 
 import { Card, CardBody } from '~/components/Card';
 
-export const Container = styled(Grid)`
-  margin-top: 20px;
-  min-height: calc(100% - 140px);
+export const ServicosContainer = styled.div`
+  background: ${({ theme }) => theme.colors.primary};
 
-  #slogan {
-    margin: 50px 0;
-  }
-
-  ${Col} {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .servicos {
+  ${Row} {
     ${Card} {
       margin: 30px;
       transition: transform .2s;
@@ -48,6 +37,14 @@ export const Container = styled(Grid)`
         }
       }
     }
+  }
+`;
+
+export const Presentation = styled(Grid)`
+  margin-top: 20px;
+
+  #slogan {
+    margin: 50px 0;
   }
 `;
 
