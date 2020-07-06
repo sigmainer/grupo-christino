@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 
 import { Card, CardBody } from '~/components/Card';
-import { Modal, ModalHeader, ModalBody } from '~/components/Modal';
 import Text from '~/components/Text';
 
 import useWindowSize from '~/utils/useWindowSize';
@@ -10,10 +9,6 @@ import useWindowSize from '~/utils/useWindowSize';
 import { Presentation, ServicosContainer, TextContainer, ImgContainer } from './styles';
 
 const Index: React.FC = () => {
-  const [modalContabilidade, setModalContabilidade] = useState(false);
-  const [modalDespachante, setModalDespachante] = useState(false);
-  const [modalSeguros, setModalSeguros] = useState(false);
-
   const windowSize = useWindowSize();
 
   return (
@@ -27,7 +22,7 @@ const Index: React.FC = () => {
               </Text>
 
               <Text size={20} entryAnimation center>
-                Somos o Grupo Christino, empresa especializada em Serviços Contábeis, de Despachante e de Seguros.
+                Somos a Christino Consultoria, empresa especializada em Serviços Contábeis, de Despachante e de Seguros.
                 Com atuação a mais de 20 anos no mercado, angariamos o reconhecimento do mercado em trazer soluções a
                 nossos clientes.
               </Text>
@@ -39,11 +34,11 @@ const Index: React.FC = () => {
           </Col>
 
           {windowSize.hideOn('sm') && (
-          <Col xs={false} sm={4}>
-            <ImgContainer>
-              <img src="assets/contabilidade1.svg" alt="" />
-            </ImgContainer>
-          </Col>
+            <Col xs={false} sm={4}>
+              <ImgContainer>
+                <img src="assets/contabilidade1.svg" alt="" />
+              </ImgContainer>
+            </Col>
           )}
         </Row>
       </Presentation>
@@ -51,7 +46,7 @@ const Index: React.FC = () => {
       <ServicosContainer>
         <Grid>
           <Row className="servicos">
-            <Col xs={12} sm={4} onClick={() => setModalContabilidade(true)}>
+            <Col xs={12} sm={4}>
               <Card>
                 <CardBody>
                   <ImgContainer>
@@ -62,7 +57,7 @@ const Index: React.FC = () => {
               </Card>
             </Col>
 
-            <Col xs={12} sm={4} onClick={() => setModalDespachante(true)}>
+            <Col xs={12} sm={4}>
               <Card>
                 <CardBody>
                   <ImgContainer>
@@ -73,7 +68,7 @@ const Index: React.FC = () => {
               </Card>
             </Col>
 
-            <Col xs={12} sm={4} onClick={() => setModalSeguros(true)}>
+            <Col xs={12} sm={4}>
               <Card>
                 <CardBody>
                   <ImgContainer>
@@ -90,17 +85,17 @@ const Index: React.FC = () => {
       <Grid>
         <Row>
           {windowSize.hideOn('sm') && (
-          <Col xs={false} sm={4}>
-            <ImgContainer>
-              <img src="assets/deal.svg" alt="" />
-            </ImgContainer>
-          </Col>
+            <Col xs={false} sm={4}>
+              <ImgContainer>
+                <img src="assets/deal.svg" alt="" />
+              </ImgContainer>
+            </Col>
           )}
 
           <Col xs={12} sm={12} md={8}>
             <TextContainer>
               <Text size={22} entryAnimation center asTitle>
-                NÓS NOS IMPORTAMOS
+                NOS IMPORTAMOS
               </Text>
 
               <Text size={18} entryAnimation center>
@@ -138,41 +133,43 @@ const Index: React.FC = () => {
           </Col>
 
           {windowSize.hideOn('sm') && (
-          <Col xs={false} sm={4}>
-            <ImgContainer>
-              <img src="assets/objetivo.svg" alt="" />
-            </ImgContainer>
-          </Col>
+            <Col xs={false} sm={4}>
+              <ImgContainer>
+                <img src="assets/objetivo.svg" alt="" />
+              </ImgContainer>
+            </Col>
           )}
         </Row>
+
+        <Row>
+          <Col xs={12} sm={6}>
+            <TextContainer>
+              <Text size={22} entryAnimation center asTitle>
+                ONDE ESTAMOS
+              </Text>
+
+              <Text size={18} entryAnimation center>
+                R. Dr. Ataliba Leonel, 847 - Taquarituba - SP
+                <br />
+                de Segunda a Sexta das 08:30 as 17:30
+              </Text>
+            </TextContainer>
+          </Col>
+          <Col xs={12} sm={6}>
+            <TextContainer>
+              <Text size={22} entryAnimation center asTitle>
+                ENTRE EM CONTATO
+              </Text>
+
+              <Text size={18} entryAnimation center>
+                contato@christinoconsultoria.com.br
+                <br />
+                (14) 3762-1990 / (14) 3762-1991
+              </Text>
+            </TextContainer>
+          </Col>
+        </Row>
       </Grid>
-
-      <Modal open={modalContabilidade} onClose={() => setModalContabilidade(false)}>
-        <ModalHeader>
-          CONTABILIDADE
-        </ModalHeader>
-        <ModalBody>
-          aa
-        </ModalBody>
-      </Modal>
-
-      <Modal open={modalDespachante} onClose={() => setModalDespachante(false)}>
-        <ModalHeader>
-          DESPACHANTE
-        </ModalHeader>
-        <ModalBody>
-          aa
-        </ModalBody>
-      </Modal>
-
-      <Modal open={modalSeguros} onClose={() => setModalSeguros(false)}>
-        <ModalHeader>
-          SEGUROS
-        </ModalHeader>
-        <ModalBody>
-          aa
-        </ModalBody>
-      </Modal>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-styled-flexboxgrid';
+import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 
 import useWindowSize from '~/utils/useWindowSize';
 
@@ -10,7 +10,9 @@ const Footer: React.FC = () => {
 
   return (
     <Container>
-      {windowSize.hideOn('xs') && (
+      <hr />
+      <Grid>
+        {windowSize.hideOn('xs') && (
         <Row>
           <Col xs={4}>
             <Text>
@@ -22,7 +24,7 @@ const Footer: React.FC = () => {
 
           <Col xs={4}>
             <Text>
-              Grupo Christino 2020 &copy; Todos os diretos reservados.
+              Christino Consultoria 2020 &copy; Todos os diretos reservados.
             </Text>
           </Col>
 
@@ -34,14 +36,14 @@ const Footer: React.FC = () => {
             </Text>
           </Col>
         </Row>
-      )}
+        )}
 
-      {windowSize.showOn('xs') && (
+        {windowSize.showOn('xs') && (
         <>
           <Row>
             <Col xs={12}>
               <Text>
-                Grupo Christino 2020 &copy; Todos os diretos reservados.
+                Christino Consultoria 2020 &copy; Todos os diretos reservados.
               </Text>
             </Col>
           </Row>
@@ -66,7 +68,8 @@ const Footer: React.FC = () => {
             </Col>
           </Row>
         </>
-      )}
+        )}
+      </Grid>
     </Container>
   );
 };

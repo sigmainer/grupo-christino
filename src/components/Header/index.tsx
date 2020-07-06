@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { FaInstagram, FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import React from 'react';
+import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 import { Row, Col } from 'react-styled-flexboxgrid';
 
-import Button from '~/components/Button';
-import Link from '~/components/Link';
-import { Modal, ModalHeader, ModalBody } from '~/components/Modal';
+import { Link } from '~/components/Button';
 
 import useWindowSize from '~/utils/useWindowSize';
 
@@ -12,7 +10,6 @@ import { Container, Navigation, ImageContainer } from './styles';
 
 const Header: React.FC = () => {
   const windowSize = useWindowSize();
-  const [modalContato, setModalContato] = useState(false);
 
   return (
     <>
@@ -21,7 +18,7 @@ const Header: React.FC = () => {
           <Col xs={12} sm={6} md={4}>
             <ImageContainer to="/">
               <img src="logo.svg" alt="grupo-logo" />
-              <h1>GRUPO CHRISTINO</h1>
+              <h3>CHRISTINO CONSULTORIA</h3>
             </ImageContainer>
           </Col>
 
@@ -37,25 +34,13 @@ const Header: React.FC = () => {
               <Link href="https://wa.me/5514997068240" target="_blank">
                 <FaWhatsapp size={20} />
               </Link>
-
-              <Button onClick={() => setModalContato(true)}>
-                <FaEnvelope size={20} />
-              </Button>
             </Navigation>
           </Col>
           )}
         </Row>
       </Container>
-
-      <Modal open={modalContato} onClose={() => setModalContato(false)}>
-        <ModalHeader>
-          CONTABILIDADE
-        </ModalHeader>
-        <ModalBody>
-          aa
-        </ModalBody>
-      </Modal>
     </>
   );
 };
+
 export default Header;

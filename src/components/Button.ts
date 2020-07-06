@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { shade } from 'polished';
 
 interface IButtonProps {
   color?: 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'danger';
-  selected?: boolean;
 }
 
-export default styled.button<IButtonProps>`
+const commonConfig = css`
   padding: 10px;
   cursor: pointer;
 
@@ -28,11 +29,11 @@ export default styled.button<IButtonProps>`
     border-radius: 10px;
 
     height: 5px;
-    width: ${({ selected }) => (selected ? '90%' : '0')};
-    opacity: ${({ selected }) => (selected ? '1' : '0')};
+    width: 0;
+    opacity: 0;
 
-    background: ${({ theme, color }) => theme.colors[color || 'primary']};
-    transition: width .50s, opacity .50s;
+    background: ${({ theme }) => theme.colors.primary};
+    transition: width .5s, opacity .5s;
   }
 
   :hover {
@@ -41,4 +42,16 @@ export default styled.button<IButtonProps>`
       opacity: 1;
     }
   }
+`;
+
+export const Button = styled.button<IButtonProps>`
+  ${commonConfig}
+  :hover,
+  :focus {
+    color: ${({ theme }) => shade(0.5, theme.colors.primary)};
+  }
+`;
+
+export const Link = styled.a<IButtonProps>`
+  ${commonConfig}
 `;

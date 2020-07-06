@@ -13,18 +13,16 @@ interface IModalPropsCpt {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const Modal: React.FC<IModalPropsCpt> = (props) => {
-  const {
-    children,
-    open,
-    onClose,
-    onCloseCallback,
-    closeButton = true,
-    backdropClose = true,
-    size = 'md',
-    position = 'center',
-  } = props;
-
+const Modal: React.FC<IModalPropsCpt> = ({
+  children,
+  open,
+  onClose,
+  onCloseCallback,
+  closeButton = true,
+  backdropClose = true,
+  size = 'md',
+  position = 'center',
+}) => {
   const handleClose = () => {
     onClose();
 

@@ -33,4 +33,24 @@ export default createGlobalStyle`
       color: ${({ theme }) => shade(0.5, theme.colors.primary)};
     } 
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => shade(0.1, theme.colors.background)};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => shade(0.5, theme.colors.background)};
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => shade(0.6, theme.colors.background)};
+  }
 `;
