@@ -151,7 +151,7 @@ const Index: React.FC = () => {
               <Text size={18} entryAnimation center>
                 R. Dr. Ataliba Leonel, 847 - Taquarituba - SP
                 <br />
-                de Segunda a Sexta das 08:30 as 17:30
+                de Segunda a Sexta das 08:00 as 17:30
               </Text>
             </TextContainer>
           </Col>
