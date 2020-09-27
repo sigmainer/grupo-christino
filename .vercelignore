@@ -1,0 +1,8 @@
+__legacy__
+.env
+.eslintignore
+.git
+.gitignore
+.sigmaconfig.json
+.editorconfig
+README.md
