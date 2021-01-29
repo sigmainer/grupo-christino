@@ -126,7 +126,7 @@ const Index: React.FC = () => {
               </Text>
               <Text size={18} entryAnimation center>
                 Prestar serviços de excelência, com cumprimentos de todos os prazos, atendendo os requisitos legais,
-                proporcionando serviços cm qualidade e melhorias contínuas, buscando atingir a plena satisfação do
+                proporcionando serviços com qualidade e melhorias contínuas, buscando atingir a plena satisfação do
                 cliente.
               </Text>
             </TextContainer>
