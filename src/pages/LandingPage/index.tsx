@@ -22,9 +22,8 @@ const Index: React.FC = () => {
               </Text>
 
               <Text size={20} entryAnimation center>
-                Somos a Christino Consultoria, empresa especializada em Serviços Contábeis, de Despachante e de Seguros.
-                Com atuação a mais de 20 anos no mercado, angariamos o reconhecimento do mercado em trazer soluções a
-                nossos clientes.
+                Somos o escritório Christino, empresa especializada em Serviços Contábeis, Despachante e Seguros.
+                Com atuação a mais de 20 anos no mercado, angariamos o reconhecimento do mercado em trazer soluções a nossos clientes.
               </Text>
 
               <Text size={24} entryAnimation fontFamily="Yellowtail" center id="slogan">

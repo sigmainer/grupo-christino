@@ -13,6 +13,7 @@ const light: DefaultTheme = {
     text: '#333333',
     shaddow: 'rgba(50, 50, 50, .25)',
   },
+
   flexboxgrid: {
     // Columns quantity
     gridSize: 12,

@@ -54,7 +54,7 @@
     /* Defines max row length */
     "max-len": [
       "warn",
-      { "code": 120 }
+      { "code": 170 }
     ],
 
     "react/jsx-props-no-spreading": "off",

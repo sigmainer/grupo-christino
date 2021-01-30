@@ -3,7 +3,7 @@ import { Grid, Row } from 'react-styled-flexboxgrid';
 import styled, { css } from 'styled-components';
 
 export const Container = styled(Grid)`
-  height: 60px;
+  height: 70px;
 
   color: ${({ theme }) => theme.colors.text};
 
@@ -13,19 +13,14 @@ export const Container = styled(Grid)`
 `;
 
 export const ImageContainer = styled(Link)`
-  height: 100%;
+  margin-top: 5px;
 
   display: flex;
   align-items: center;
 
   img {
-    height: 40px;
+    height: 60px;
     margin-right: 5px;
-  }
-
-  :hover,
-  :focus {
-    color: ${({ theme }) => theme.colors.text};
   }
 
   ${({ theme }) => (css`

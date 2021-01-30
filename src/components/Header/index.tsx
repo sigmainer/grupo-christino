@@ -17,8 +17,7 @@ const Header: React.FC = () => {
         <Row>
           <Col xs={12} sm={6} md={4}>
             <ImageContainer to="/">
-              <img src="logo.svg" alt="grupo-logo" />
-              <h3>CHRISTINO CONSULTORIA</h3>
+              <img src="assets/christino-logo.png" alt="grupo-logo" />
             </ImageContainer>
           </Col>
 
