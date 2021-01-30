@@ -13,8 +13,6 @@ export const ServicosContainer = styled.div`
       pointer-events: none;
       animation: CardEntry .6s;
 
-      cursor: pointer;
-
       ${CardBody} {
         pointer-events: auto;
       }

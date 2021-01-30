@@ -45,7 +45,8 @@ const commonConfig = css`
 `;
 
 export const Button = styled.button<IButtonProps>`
-  ${commonConfig}
+  ${commonConfig};
+
   :hover,
   :focus {
     color: ${({ theme }) => shade(0.5, theme.colors.primary)};
