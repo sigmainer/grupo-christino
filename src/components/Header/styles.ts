@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Main = styled.main`
+export const Container = styled.header`
   padding-top: 5px;
   display: grid;
 
   grid-template-columns: 1fr;
   grid-template-areas: 'IC';
+  margin: 0 auto;
+
+  @media (min-width:320px) { max-width: 320px; }
+  @media (min-width:480px) { max-width: 480px; }
+  @media (min-width:600px) { max-width: 600px; }
+  @media (min-width:801px) { max-width: 801px; }
+  @media (min-width:1025px) { max-width: 1025px; }
+  @media (min-width:1281px) { max-width: 1281px; }
 
   @media (min-width:801px) {
     grid-template-columns: 243px 1fr;

@@ -3,10 +3,10 @@ import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 import { Button, Link } from '~/components/Button';
 
-import { Navigation, ImageContainer, Main } from './styles';
+import { Navigation, ImageContainer, Container } from './styles';
 
 const Header: React.FC = () => (
-  <Main>
+  <Container>
     <ImageContainer to="/">
       <img src="assets/christino-logo.png" alt="grupo-logo" />
     </ImageContainer>
@@ -25,7 +25,7 @@ const Header: React.FC = () => (
         <FaWhatsapp size={20} />
       </Link>
     </Navigation>
-  </Main>
+  </Container>
 );
 
 export default Header;

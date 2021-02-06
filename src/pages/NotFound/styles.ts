@@ -1,7 +1,6 @@
-import { Grid } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 
-export const Container = styled(Grid)`
+export const Container = styled.main`
   margin-top: 10px;
   margin-bottom: 10px;
 
