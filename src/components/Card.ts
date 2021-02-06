@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 interface ICardProps {
   height?: string | number;
+  width?: string | number;
 }
 
 interface ICardHeaderProps {
@@ -19,8 +20,8 @@ export const CardHeader = styled.div<ICardHeaderProps>`
   font-size: 16px;
   text-transform: ${({ textCase }) => textCase || 'uppercase'};
   
-  color: ${({ theme, variant }) => theme.colors[`${variant || 'primary'}Text`]};
-  background: ${({ theme, variant }) => theme.colors[variant || 'primary']};
+  color: ${({ theme, variant }) => theme[variant || 'primary'].text};
+  background: ${({ theme, variant }) => theme[variant || 'primary']};
   
   display: flex;
   justify-content: ${({ align }) => align || 'center'};
@@ -30,20 +31,26 @@ export const CardHeader = styled.div<ICardHeaderProps>`
 `;
 
 export const CardBody = styled.div<ICardBodyProps>`
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
+  background: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   text-align: ${({ textAlign }) => textAlign || 'initial'};
 
   height: calc(100% - 40px);
 `;
 
 export const Card = styled.div<ICardProps>`
-  box-shadow: 0 2px 8px 1px ${({ theme }) => theme.colors.shaddow};
+  box-shadow: ${({ theme }) => theme.shaddow};
   border-radius: 20px;
   overflow: hidden;
   ${({ height }) => (
     height && css`
       height: ${(typeof height === 'number' ? `${height}px` : height)};
+    `
+  )}
+
+  ${({ width }) => (
+    width && css`
+      width: ${(typeof width === 'number' ? `${width}px` : width)};
     `
   )}
 

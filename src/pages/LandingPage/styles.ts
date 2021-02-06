@@ -1,79 +1,100 @@
-import { Grid, Row } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
-
 import { Card, CardBody } from '~/components/Card';
 
-export const ServicosContainer = styled.div`
-  background: ${({ theme }) => theme.colors.primary};
+export const Presentation = styled.div`
+  display: grid;
 
-  ${Row} {
-    ${Card} {
-      margin: 30px;
-      transition: transform .2s;
-      pointer-events: none;
-      animation: CardEntry .6s;
 
-      ${CardBody} {
-        pointer-events: auto;
-      }
+  grid-template-columns: 1fr;
+  grid-template-areas: 'TP';
+
+  @media (min-width:801px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'TP IP';
+  }
+
+  .texto-apresentacao {
+    padding: 20px 0;
+    @media (min-width:801px) { padding: 0; }
+
+    grid-area: TP;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    button:nth-child(1) {
+      border: 2px solid ${({ theme }) => theme.primary.main};
+      padding: 8px;
+      border-radius: 10px;
+      background: none;
+      color: ${({ theme }) => theme.text};
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 250ms ease;
+      font-size: 20px;
 
       :hover {
-        transform: scale(1.05);
-      }
-
-      @keyframes CardEntry {
-        0% {
-          transform: scale(.95);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.01);
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
+        background: ${({ theme }) => theme.primary.main};
+        color: ${({ theme }) => theme.primary.contrastText};
       }
     }
   }
-`;
 
-export const Presentation = styled(Grid)`
-  margin-top: 20px;
+  .img-apresentacao {
+    display: none;
+    @media (min-width:801px) { display: block; }
+    grid-area: IP;
 
-  #slogan {
-    margin: 50px 0;
-  }
-`;
+    img {
+      animation: ImageEntry 1s ease;
 
-export const TextContainer = styled.div`
-  height: 100%;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ImgContainer = styled.div`
-  width: 100%;
-  animation: entry .4s;
-
-  img {
-    width: 100%;
-  }
-
-  @keyframes entry {
-    0% {
-      transform: scale(.99);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1.01);
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
+      @keyframes ImageEntry {
+        0% { transform: scale(.95); opacity: 0; }
+        50% { transform: scale(1.01); }
+        100% { transform: scale(1); opacity: 1; }
+      }
     }
   }
+`;
+
+export const AboutUs = styled.div`
+  display: grid;
+
+  grid-template-areas: 'CT' 'FC' 'DP' 'MI';
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+
+  @media (min-width:600px) {
+    grid-template-areas: 'CT FC' 'DP MI';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  @media (min-width:801px) {
+    grid-template-areas: 'CT FC DP MI';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+  }
+
+  ${Card} {
+    transition: transform 250ms ease;
+    cursor: pointer;
+
+    :hover { transform: scale(1.05); }
+
+    ${CardBody} {
+      font-weight: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .contabil { grid-area: CT; }
+  .fiscal { grid-area: FC; }
+  .dp { grid-area: DP; }
+  .mei { grid-area: MI; }
 `;

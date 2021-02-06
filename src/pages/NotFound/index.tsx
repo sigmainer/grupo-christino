@@ -5,7 +5,7 @@ import { Container } from './styles';
 const NotFound: React.FC = () => (
   <Container>
     <div>
-      <img src="assets/404.svg" alt="page-not-found" />
+      <img src="images/404.svg" alt="page-not-found" />
     </div>
   </Container>
 );

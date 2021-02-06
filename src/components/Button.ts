@@ -16,7 +16,7 @@ const commonConfig = css`
 
   font-weight: 800;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.text};
 
   position: relative;
 
@@ -32,7 +32,7 @@ const commonConfig = css`
     width: 0;
     opacity: 0;
 
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.primary.main};
     transition: width .5s, opacity .5s;
   }
 
@@ -49,7 +49,7 @@ export const Button = styled.button<IButtonProps>`
 
   :hover,
   :focus {
-    color: ${({ theme }) => shade(0.5, theme.colors.primary)};
+    color: ${({ theme }) => shade(0.5, theme.primary.main)};
   }
 `;
 

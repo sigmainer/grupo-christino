@@ -1,39 +1,39 @@
 import { Link } from 'react-router-dom';
-import { Grid, Row } from 'react-styled-flexboxgrid';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const Container = styled(Grid)`
-  height: 70px;
+export const Main = styled.main`
+  padding-top: 5px;
+  display: grid;
 
-  color: ${({ theme }) => theme.colors.text};
+  grid-template-columns: 1fr;
+  grid-template-areas: 'IC';
 
-  ${Row} {
-    height: 100%;
+  @media (min-width:801px) {
+    grid-template-columns: 243px 1fr;
+    grid-template-areas: 'IC NV';
   }
 `;
 
 export const ImageContainer = styled(Link)`
-  margin-top: 5px;
-
+  grid-area: IC;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   img {
     height: 60px;
     margin-right: 5px;
   }
-
-  ${({ theme }) => (css`
-    @media screen and (max-width: ${theme.flexboxgrid.breakpoints.md}rem) {
-      justify-content: center;  
-    }
-  `)}
 `;
 
 export const Navigation = styled.nav`
+  grid-area: NV;
+
+  display: none;
+  @media (min-width:801px) { display: flex; }
+
   height: 100%;
 
-  display:flex;
   align-items: center;
   justify-content: flex-end;
 `;
